@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_calculator_app/calculator.dart';
+import 'package:simple_calculator_app/splashScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Basic Calculator',
-      home: const Calculator(),
+      debugShowCheckedModeBanner: false,
+      title: 'My Calculator',
+      home: const Splashscreen(),
     );
   }
 }

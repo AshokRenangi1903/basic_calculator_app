@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// just for fun
 
 class EachButton extends StatelessWidget {
   final text;

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:math_expressions/math_expressions.dart';
 import 'package:simple_calculator_app/button.dart';
+import 'package:simple_calculator_app/constants/colors.dart';
 
 class Calculator extends StatefulWidget {
   const Calculator({super.key});
@@ -14,55 +15,62 @@ class Calculator extends StatefulWidget {
 class _CalculatorState extends State<Calculator> {
   var userInput = "";
   var answer = '0';
-  Color primary = Colors.orange;
-  Color secondary = Colors.white;
+  Color primary = MyColors.green;
+  Color secondary = MyColors.black;
+  Color teritay = MyColors.white;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Basic Calculator"),
-        backgroundColor: primary,
-        foregroundColor: secondary,
+        title: Text("My Calculator"),
+        backgroundColor: MyColors.green,
+        foregroundColor: MyColors.black,
       ),
       body: Container(
-        color: Colors.black54,
+        height: MediaQuery.sizeOf(context).height,
+        color: secondary,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             // Text Area
-            Expanded(
-                child: Container(
-              // color: Colors.yellow,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  // user Input
-                  Container(
-                    width: double.infinity,
-                    margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
-                    child: Text(
-                      userInput,
-                      textAlign: TextAlign.right,
-                      style: TextStyle(color: Colors.grey, fontSize: 28),
+            Container(
+              // color: Colors.red,
+              height: MediaQuery.sizeOf(context).height * 0.28,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    // user Input
+                    Container(
+                      // color: Colors.amber,
+                      width: double.infinity,
+                      margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                      child: Text(
+                        userInput,
+                        textAlign: TextAlign.right,
+                        style: TextStyle(color: Colors.grey, fontSize: 22),
+                      ),
                     ),
-                  ),
 
-                  // Answer
-                  Container(
-                    width: double.infinity,
-                    margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
-                    child: Text(
-                      answer,
-                      textAlign: TextAlign.right,
-                      style: TextStyle(color: primary, fontSize: 64),
+                    // Answer
+                    Container(
+                      // color: Colors.amber,
+                      width: double.infinity,
+                      margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                      child: Text(
+                        answer,
+                        textAlign: TextAlign.right,
+                        style: TextStyle(color: primary, fontSize: 42),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            )),
+            ),
 
             // Buttons Area
             Container(
-              // color: Colors.red,
+              // color: Colors.blue,
               padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
               child: Column(
                 children: [
@@ -72,46 +80,39 @@ class _CalculatorState extends State<Calculator> {
                     children: [
                       EachButton(
                         text: '1',
-                        bgColor: Colors.grey,
-                        textColor: secondary,
+                        textColor: teritay,
                         buttonTapped: () {
                           setState(() {
                             userInput += '1';
                           });
-                          print(1);
                         },
                       ),
                       EachButton(
                         text: '2',
-                        bgColor: Colors.grey,
-                        textColor: Colors.white,
+                        textColor: teritay,
                         buttonTapped: () {
                           setState(() {
                             userInput += '2';
                           });
-                          print(2);
                         },
                       ),
                       EachButton(
                         text: '3',
-                        bgColor: Colors.grey,
-                        textColor: Colors.white,
+                        textColor: teritay,
                         buttonTapped: () {
                           setState(() {
                             userInput += '3';
                           });
-                          print(3);
                         },
                       ),
                       EachButton(
                         text: '/',
-                        bgColor: secondary,
+                        // bgColor: primary,
                         textColor: primary,
                         buttonTapped: () {
                           setState(() {
                             userInput += '/';
                           });
-                          print("/");
                         },
                       ),
                     ],
@@ -123,46 +124,39 @@ class _CalculatorState extends State<Calculator> {
                     children: [
                       EachButton(
                         text: '4',
-                        bgColor: Colors.grey,
-                        textColor: Colors.white,
+                        textColor: teritay,
                         buttonTapped: () {
                           setState(() {
                             userInput += '4';
                           });
-                          print(4);
                         },
                       ),
                       EachButton(
                         text: '5',
-                        bgColor: Colors.grey,
-                        textColor: Colors.white,
+                        textColor: teritay,
                         buttonTapped: () {
                           setState(() {
                             userInput += '5';
                           });
-                          print(5);
                         },
                       ),
                       EachButton(
                         text: '6',
-                        bgColor: Colors.grey,
-                        textColor: Colors.white,
+                        textColor: teritay,
                         buttonTapped: () {
                           setState(() {
                             userInput += '6';
                           });
-                          print(6);
                         },
                       ),
                       EachButton(
                         text: '+',
-                        bgColor: secondary,
+                        // bgColor: primary,
                         textColor: primary,
                         buttonTapped: () {
                           setState(() {
                             userInput += '+';
                           });
-                          print('+');
                         },
                       ),
                     ],
@@ -174,46 +168,39 @@ class _CalculatorState extends State<Calculator> {
                     children: [
                       EachButton(
                         text: '7',
-                        bgColor: Colors.grey,
-                        textColor: Colors.white,
+                        textColor: teritay,
                         buttonTapped: () {
                           setState(() {
                             userInput += '7';
                           });
-                          print(7);
                         },
                       ),
                       EachButton(
                         text: '8',
-                        bgColor: Colors.grey,
-                        textColor: Colors.white,
+                        textColor: teritay,
                         buttonTapped: () {
                           setState(() {
                             userInput += '8';
                           });
-                          print(8);
                         },
                       ),
                       EachButton(
                         text: '9',
-                        bgColor: Colors.grey,
-                        textColor: Colors.white,
+                        textColor: teritay,
                         buttonTapped: () {
                           setState(() {
                             userInput += '9';
                           });
-                          print(9);
                         },
                       ),
                       EachButton(
                         text: '-',
-                        bgColor: secondary,
+                        // bgColor: primary,
                         textColor: primary,
                         buttonTapped: () {
                           setState(() {
                             userInput += '-';
                           });
-                          print('-');
                         },
                       ),
                     ],
@@ -224,37 +211,76 @@ class _CalculatorState extends State<Calculator> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       EachButton(
+                        text: '.',
+                        textColor: primary,
+                        buttonTapped: () {
+                          setState(() {
+                            userInput += '.';
+                          });
+                        },
+                      ),
+                      EachButton(
+                        text: '0',
+                        textColor: teritay,
+                        buttonTapped: () {
+                          setState(() {
+                            userInput += '0';
+                          });
+                        },
+                      ),
+                      EachButton(
+                        text: '00',
+                        textColor: teritay,
+                        buttonTapped: () {
+                          setState(() {
+                            userInput += '00';
+                          });
+                        },
+                      ),
+                      EachButton(
+                        text: '*',
+                        textColor: primary,
+                        // bgColor: primary,
+                        buttonTapped: () {
+                          setState(() {
+                            userInput += '*';
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+
+                  // Row 5
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      EachButton(
                         text: 'C',
-                        bgColor: Colors.transparent,
                         textColor: primary,
                         buttonTapped: () {
                           setState(() {
                             userInput = '';
                             answer = '0';
                           });
-                          print('C');
                         },
                       ),
                       EachButton(
-                        text: '0',
-                        bgColor: Colors.grey,
-                        textColor: Colors.white,
-                        buttonTapped: () {
-                          setState(() {
-                            userInput += '0';
-                          });
-                          print(0);
-                        },
-                      ),
-                      EachButton(
-                        text: '*',
-                        bgColor: secondary,
+                        text: '^',
                         textColor: primary,
                         buttonTapped: () {
                           setState(() {
-                            userInput += '*';
+                            userInput += '^';
                           });
-                          print('*');
+                        },
+                      ),
+                      EachButton(
+                        text: '%',
+                        textColor: primary,
+                        // bgColor: primary,
+                        buttonTapped: () {
+                          setState(() {
+                            userInput += '%';
+                          });
                         },
                       ),
                       EachButton(
@@ -265,7 +291,6 @@ class _CalculatorState extends State<Calculator> {
                           setState(() {
                             equalPressed();
                           });
-                          print('=');
                         },
                       ),
                     ],
